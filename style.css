@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #00000f;
+  background-color: #113;
   color: #fff;
   font-family: "Helvetica", Arial, sans-serif;
   display: flex;
@@ -16,14 +16,16 @@ body {
 
 eve-server-status {
   display: block;
-  padding: 20px;
+  padding: 2px;
   text-align: center;
   border-radius: 4px;
   border: 2px solid #113131;
-  outline: 2px solid #113;
-  background-color: #00000f;
+  outline: 4px solid #ddd;
+  background-color: transparent;
   width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow:
+  inset 0px -20px 20px -10px rgba(0, 0, 0, .1),
+  inset 0px 20px 20px -10px rgba(255, 255, 255, .1);
   transition: ease-in-out;
   transition-duration: 300ms;
 }
@@ -32,7 +34,6 @@ eve-server-status:hover {
   box-shadow: 0 0 20px rgba(51, 51, 51, 0.5);
   outline-offset: 0;
   border-color: hsl(60, 100%, 30%);
-  background-color: #00000f;
   transition-duration: 300ms;
 }
 

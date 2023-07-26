@@ -22,8 +22,16 @@ class EveServerStatus extends HTMLElement {
         const uptime = calculateUptime(startTime, now());
 
         this.innerHTML = `
+
 						<table>
-							<tr>
+              <thead>
+                <th colspan=2>
+                  <h3>
+                    Server Monitor
+                  </h3>
+                </th>
+              </thead>
+            <tr>
 								<td class="column-a status">
 		              ⚡&nbsp;Server&nbsp;Status&nbsp;:&nbsp;
 								</td>
