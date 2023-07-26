@@ -87,7 +87,6 @@ function calculateUptime(startTime, endTime) {
 
   return `${hours % 24}h : ${minutes % 60}m : ${seconds % 60}s`;
 }
-
 // Automatically update the server status every 60 seconds
 setInterval(() => {
   const serverStatusElement = document.querySelector("eve-server-status");
