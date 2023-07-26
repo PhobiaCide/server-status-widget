@@ -12,13 +12,11 @@ class EveServerStatus extends HTMLElement {
       "https://esi.evetech.net/latest/status/?datasource=tranquility";
 
     fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         const { server_version, players, start_time } = data;
         const isOnline = players > 0;
         const serverStatus = isOnline ? "Online 😀" : "Offline 💔";
-        if (serverStatus === "Online 😀") {
-        }
 
         const startTime = new Date(start_time);
         const uptime = calculateUptime(startTime, now());
@@ -90,8 +88,8 @@ function calculateUptime(startTime, endTime) {
   return `${hours % 24}h : ${minutes % 60}m : ${seconds % 60}s`;
 }
 
-// Automatically update the server status every 30 seconds
+// Automatically update the server status every 60 seconds
 setInterval(() => {
   const serverStatusElement = document.querySelector("eve-server-status");
   serverStatusElement.fetchServerStatus();
-}, 15000);
+}, 60000);
