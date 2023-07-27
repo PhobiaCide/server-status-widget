@@ -27,7 +27,7 @@ class EveServerStatus extends HTMLElement {
               <thead>
                 <th colspan=2>
                   <h3>
-                    Server Monitor
+                    Eve Online Server Monitor
                   </h3>
                 </th>
               </thead>
