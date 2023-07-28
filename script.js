@@ -22,20 +22,22 @@ class EveServerStatus extends HTMLElement {
         const uptime = calculateUptime(startTime, now());
 
         this.innerHTML = `
-
 						<table>
               <thead>
-                <th colspan=2>
+                <th id="status-header">
                   <h3>
-                    Eve Online Server Monitor
+                    Server Monitor
                   </h3>
                 </th>
               </thead>
-            <tr>
-								<td class="column-a status">
+            </table>
+            <hr>
+            <table>
+              <tr>
+								<td class="column-a">
 		              ⚡&nbsp;Server&nbsp;Status&nbsp;:&nbsp;
 								</td>
-								<td class="column-b ${isOnline ? "online" : "offline"}">
+								<td class="column-b ${isOnline ? "online" : "offline"}" id="status">
 									${serverStatus}
 								</td>
 							</tr>
@@ -43,7 +45,7 @@ class EveServerStatus extends HTMLElement {
 								<td class="column-a">
 									👨‍👩‍👧‍👦&nbsp;Player&nbsp;Count&nbsp;:&nbsp;
 								</td>
-								<td class="column-b player-count">
+								<td class="column-b" id="player-count">
 									${players}
 								</td>
 							</tr>
@@ -51,7 +53,7 @@ class EveServerStatus extends HTMLElement {
 								<td class="column-a">
 									⏱&nbsp;Uptime&nbsp;:&nbsp;
 								</td>
-								<td class="column-b uptime">
+								<td class="column-b" id="uptime">
 									<span id="uptime">${uptime}</span>
 								</td>
 							</tr>
@@ -59,7 +61,7 @@ class EveServerStatus extends HTMLElement {
 								<td class="column-a">
 									🎰&nbsp;Version&nbsp;:&nbsp;
 								</td>
-								<td class="column-b version">
+								<td class="column-b" id="version">
 									${server_version}
 								</td>
 							</tr>
@@ -89,11 +91,11 @@ customElements.define("eve-server-status", EveServerStatus);
 // Helper function to calculate uptime
 function calculateUptime(startTime, endTime) {
   const diff = endTime - startTime;
-  const seconds = Math.floor(diff / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
+  const seconds = Math.max(Math.floor(diff / 1000), 0);
+  const minutes = Math.max(Math.floor(seconds / 60), 0);
+  const hours = Math.max(Math.floor(minutes / 60), 0);
 
-  return `${hours % 24}h : ${minutes % 60}m : ${seconds % 60}s`;
+  return (seconds + minutes + hours > 0) ? `${hours % 24}h : ${minutes % 60}m : ${seconds % 60}s` : `0`;
 }
 // Automatically update the server status every 60 seconds
 setInterval(() => {
