@@ -24,7 +24,7 @@ class EveServerStatus extends HTMLElement {
         this.innerHTML = `
 						<table>
               <thead>
-                <th id="status-header">
+                <th id="server-status-header">
                   <h3>
                     Server Monitor
                   </h3>
