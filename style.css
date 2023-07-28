@@ -21,31 +21,29 @@ eve-server-status {
   padding-top: 0px;
   text-align: center;
   border-radius: 3px;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 1);
   background-color: transparent;
   background-image: 
-  linear-gradient(0deg, rgba(0, 0, 0, .1) 0%, transparent 40%), 
-  linear-gradient(180deg, rgba(255, 255, 255, .1) 0%, transparent 40%);
-  background-blend-mode: difference;
+  linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 0)  60%, rgba(255, 255, 255, 0.1) 100%);
   width: 350px;
   transition: ease;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
 }
 
 eve-server-status:hover {
   box-shadow: 
-  0 0 0px 2px rgba(255, 255, 255, .05),
-  0 0 1px 4px rgba(255, 255, 255, .045),
-  0 0 2px 6px rgba(255, 255, 255, .04),
-  0 0 3px 8px rgba(255, 255, 255, .035),
-  0 0 4px 10px rgba(255, 255, 255, .03),
-  0 0 5px 12px rgba(255, 255, 255, .025),
-  0 0 6px 14px rgba(255, 255, 255, .02),
-  0 0 7px 16px rgba(255, 255, 255, .015),
-  0 0 8px 18px rgba(255, 255, 255, .01),
-  0 0 9px 20px rgba(255, 255, 255, .005);
+  0 0 15px 0px rgba(255, 255, 255, .512),
+  0 0 15px 1px rgba(255, 255, 255, .256),
+  0 0 15px 2px rgba(255, 255, 255, .128),
+  0 0 15px 3px rgba(255, 255, 255, .064),
+  0 0 15px 4px rgba(255, 255, 255, .032),
+  0 0 15px 5px rgba(255, 255, 255, .016),
+  0 0 15px 6px rgba(255, 255, 255, .008),
+  0 0 15px 7px rgba(255, 255, 255, .004),
+  0 0 15px 8px rgba(255, 255, 255, .002),
+  0 0 15px 9px rgba(255, 255, 255, .001);
   transition: ease;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
 }
 
 table {
