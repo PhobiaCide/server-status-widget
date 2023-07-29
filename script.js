@@ -26,7 +26,7 @@ class EveServerStatus extends HTMLElement {
               <thead>
                 <th id="server-status-header">
                   <h3>
-                    Server Monitor
+                    Server Status
                   </h3>
                 </th>
               </thead>
@@ -46,7 +46,7 @@ class EveServerStatus extends HTMLElement {
 									👨‍👩‍👧‍👦&nbsp;Player&nbsp;Count&nbsp;:&nbsp;
 								</td>
 								<td class="column-b" id="player-count">
-									${players}
+									${players ?? 0}
 								</td>
 							</tr>
 							<tr>
@@ -62,7 +62,7 @@ class EveServerStatus extends HTMLElement {
 									🎰&nbsp;Version&nbsp;:&nbsp;
 								</td>
 								<td class="column-b" id="version">
-									${server_version}
+									${server_version ?? 'n/a'}
 								</td>
 							</tr>
 						</table>
