@@ -101,4 +101,4 @@ function calculateUptime(startTime, endTime) {
 setInterval(() => {
   const serverStatusElement = document.querySelector("eve-server-status");
   serverStatusElement.fetchServerStatus();
-}, 60000);
+}, 45000);
