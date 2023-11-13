@@ -4,14 +4,35 @@
   --px: 10px;
 }
 
+html {
+  @font-face {
+    font-family: 'Fragma';
+    src: url(./fonts/fragma.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: "eveSansNeueExpanded";
+    src: url(./fonts/eveSansNeueExpanded.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: "eveSansNeueCondensed";
+    src: url(./fonts/eveSansNeueCondensed.ttf) format('truetype');
+  }
+}
+
 body {
   background-color: #113;
   color: #fff;
-  font-family: 'Ubuntu', 'REM', sans-serif;
+  font-family: 'Fragma';
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'eveSansNeueCondensed';
 }
 
 eve-server-status {
@@ -23,27 +44,27 @@ eve-server-status {
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 1);
   background-color: transparent;
-  background-image: 
-  linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 0)  60%, rgba(255, 255, 255, 0.1) 100%);
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.1) 100%);
   width: 350px;
   transition: ease;
   transition-duration: 600ms;
 }
 
 eve-server-status:hover {
-  box-shadow: 
-  0 0 15px 0px rgba(255, 255, 255, .512),
-  0 0 15px 1px rgba(255, 255, 255, .256),
-  0 0 15px 2px rgba(255, 255, 255, .128),
-  0 0 15px 3px rgba(255, 255, 255, .064),
-  0 0 15px 4px rgba(255, 255, 255, .032),
-  0 0 15px 5px rgba(255, 255, 255, .016),
-  0 0 15px 6px rgba(255, 255, 255, .008),
-  0 0 15px 7px rgba(255, 255, 255, .004),
-  0 0 15px 8px rgba(255, 255, 255, .002),
-  0 0 15px 9px rgba(255, 255, 255, .001);
+  box-shadow:
+    0 0 15px 0px rgba(255, 255, 255, .512),
+    0 0 15px 1px rgba(255, 255, 255, .256),
+    0 0 15px 2px rgba(255, 255, 255, .128),
+    0 0 15px 3px rgba(255, 255, 255, .064),
+    0 0 15px 4px rgba(255, 255, 255, .032),
+    0 0 15px 5px rgba(255, 255, a:\Documents\Code\workspaces\eve-mail\fonts\evesansneue-condensed.ttf a:\Documents\Code\workspaces\eve-mail\fonts\eveSansNeueCondensed.ttf a:\Documents\Code\workspaces\eve-mail\fonts\eveSansNeueExpanded.ttf a:\Documents\Code\workspaces\eve-mail\fonts\fragma.ttf255, .016),
+    0 0 15px 6px rgba(255, 255, 255, .008),
+    0 0 15px 7px rgba(255, 255, 255, .004),
+    0 0 15px 8px rgba(255, 255, 255, .002),
+    0 0 15px 9px rgba(255, 255, 255, .001);
   transition: ease;
-  transition-duration: 600ms;
+  transition-duration: 300ms;
 }
 
 table {
@@ -61,7 +82,7 @@ td {
 
 .column-b {
   text-align: left;
-    min-width: 140px;
+  min-width: 140px;
 }
 
 #server-status-header {
