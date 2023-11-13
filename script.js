@@ -16,56 +16,38 @@ class EveServerStatus extends HTMLElement {
       .then(data => {
         const { server_version, players, start_time } = data;
         const isOnline = players > 0;
-        const serverStatus = isOnline ? "Online 😀" : "Offline 💔";
+        const serverStatus = (isOnline) ? `Online 😀` : `Offline 💔`;
 
         const startTime = new Date(start_time);
         const uptime = calculateUptime(startTime, now());
 
         this.innerHTML = `
-						<table>
-              <thead>
-                <th id="server-status-header">
-                  <h3>
-                    Server Status
-                  </h3>
-                </th>
-              </thead>
-            </table>
-            <hr>
-            <table>
-              <tr>
-								<td class="column-a">
-		              ⚡&nbsp;Server&nbsp;Status&nbsp;:&nbsp;
-								</td>
-								<td class="column-b ${isOnline ? "online" : "offline"}" id="status">
-									${serverStatus}
-								</td>
-							</tr>
-							<tr>
-								<td class="column-a">
-									👨‍👩‍👧‍👦&nbsp;Player&nbsp;Count&nbsp;:&nbsp;
-								</td>
-								<td class="column-b" id="player-count">
-									${players ?? 0}
-								</td>
-							</tr>
-							<tr>
-								<td class="column-a">
-									⏱&nbsp;Uptime&nbsp;:&nbsp;
-								</td>
-								<td class="column-b" id="uptime">
-									<span id="uptime">${uptime}</span>
-								</td>
-							</tr>
-							<tr>
-								<td class="column-a">
-									🎰&nbsp;Version&nbsp;:&nbsp;
-								</td>
-								<td class="column-b" id="version">
-									${server_version ?? 'n/a'}
-								</td>
-							</tr>
-						</table>
+        <table>
+        <thead>
+          <th id="fw-header">
+            <h3>Faction Warfare</h3>
+          </th>
+        </thead>
+      </table>
+      <hr>
+      <table>
+        <tr>
+          <td class="column-a">⚡&nbsp;Server&nbsp;Status&nbsp;:&nbsp;</td>
+          <td class="column-b ${isOnline ? 'online' : 'offline'}" id="status">${serverStatus}</td>
+        </tr>
+        <tr>
+          <td class="column-a">👨‍👩‍👧‍👦&nbsp;Player&nbsp;Count&nbsp;:&nbsp;</td>
+          <td class="column-b" id="player-count">${players ?? 0}</td>
+        </tr>
+        <tr>
+          <td class="column-a">⏱&nbsp;Uptime&nbsp;:&nbsp;</td>
+          <td class="column-b" id="uptime"><span id="uptime">${uptime}</span></td>
+        </tr>
+        <tr>
+          <td class="column-a">🎰&nbsp;Version&nbsp;:&nbsp;</td>
+          <td class="column-b" id="version">${server_version ?? 'n/a'}</td>
+        </tr>
+      </table>
             `;
 
         this.updateUptime(startTime);
