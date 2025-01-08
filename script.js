@@ -24,8 +24,8 @@ class EveServerStatus extends HTMLElement {
         this.innerHTML = `
         <table>
         <thead>
-          <th id="fw-header">
-            <h3>Faction Warfare</h3>
+          <th id="header">
+            <h3>Tranquility Status</h3>
           </th>
         </thead>
       </table>
